@@ -11,6 +11,14 @@ TODO: Guide users through getting your code up and running on their own system. 
 # Build and Test
 TODO: Describe and show how to build your code and run the tests. 
 
+You have to run the UI project before running the UI tests
+So far got working with Edge Drivers using Selenium 4
+Tests only started passing after adding a 10 second wait - seems the test code executed too fast before the browser was able to load
+
+references
+https://www.automatetheplanet.com/webdriver-net50/
+https://code-maze.com/automatic-ui-testing-selenium-asp-net-core-mvc/
+
 # Contribute
 TODO: Explain how other users and developers can contribute to make your code better. 
 
