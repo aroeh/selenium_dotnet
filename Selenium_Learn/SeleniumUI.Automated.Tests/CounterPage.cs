@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
-using SeleniumUI.Automated.Tests.Drivers;
 using System;
+using TestDrivers;
 
 namespace SeleniumUI.Automated.Tests
 {

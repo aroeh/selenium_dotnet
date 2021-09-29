@@ -22,6 +22,7 @@ namespace SeleniumUI.Automated.Tests
         public void Counter_Navigate_HasCounterButton()
         {
             Assert.NotNull(page.counterButton);
+            Assert.Equal("Click me", page.counterButton.Text);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace SeleniumUI.Automated.Tests.Drivers
+namespace TestDrivers
 {
     public interface ITestDriver
     {

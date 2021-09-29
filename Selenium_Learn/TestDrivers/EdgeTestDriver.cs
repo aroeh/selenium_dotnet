@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace SeleniumUI.Automated.Tests.Drivers
+namespace TestDrivers
 {
     public class EdgeTestDriver : ITestDriver
     {
@@ -17,12 +17,12 @@ namespace SeleniumUI.Automated.Tests.Drivers
 
         public EdgeTestDriver()
         {
-            var edgeOptions = new EdgeOptions
+            var options = new EdgeOptions
             {
                 UseChromium = true
             };
-            edgeOptions.AddArgument("headless");
-            webDriver = new EdgeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), edgeOptions);
+            options.AddArgument("headless");
+            webDriver = new EdgeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), options);
             wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
         }
     }
