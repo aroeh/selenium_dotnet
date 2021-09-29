@@ -15,14 +15,14 @@ namespace SeleniumUI.Automated.Tests
         [Fact]
         public void Counter_Navigate_HasTitle()
         {
-            Assert.Equal("Counter", page.pageTitle.Text);
+            Assert.Equal("Counter", page.PageTitle.Text);
         }
 
         [Fact]
         public void Counter_Navigate_HasCounterButton()
         {
-            Assert.NotNull(page.counterButton);
-            Assert.Equal("Click me", page.counterButton.Text);
+            Assert.NotNull(page.CounterButton);
+            Assert.Equal("Click me", page.CounterButton.Text);
         }
     }
 }

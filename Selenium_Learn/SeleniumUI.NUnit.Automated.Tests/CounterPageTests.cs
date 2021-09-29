@@ -25,7 +25,7 @@ namespace SeleniumUI.NUnit.Automated.Tests
         {
             //var pageTitle = testRunner.Driver.FindElement(By.Id("page-title-counter"));
             
-            Assert.AreEqual("Counter", page.pageTitle.Text);
+            Assert.AreEqual("Counter", page.PageTitle.Text);
         }
 
         [Test]
@@ -33,8 +33,8 @@ namespace SeleniumUI.NUnit.Automated.Tests
         {
             //var counterButton = testRunner.Driver.FindElement(By.Id("btn-count"));
             
-            Assert.NotNull(page.counterButton);
-            Assert.AreEqual("Click me", page.counterButton.Text);
+            Assert.NotNull(page.CounterButton);
+            Assert.AreEqual("Click me", page.CounterButton.Text);
         }
 
         [TearDown]

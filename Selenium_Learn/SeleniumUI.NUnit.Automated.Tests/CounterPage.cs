@@ -16,8 +16,8 @@ namespace SeleniumUI.NUnit.Automated.Tests
 
         #region Page Elements
 
-        public IWebElement pageTitle => driver.Driver.FindElement(By.Id("page-title-counter"));
-        public IWebElement counterButton => driver.Driver.FindElement(By.Id("btn-count"));
+        public IWebElement PageTitle => driver.Driver.FindElement(By.Id("page-title-counter"));
+        public IWebElement CounterButton => driver.Driver.FindElement(By.Id("btn-count"));
 
         #endregion Page Elements
 
@@ -29,7 +29,7 @@ namespace SeleniumUI.NUnit.Automated.Tests
             driver.DriverWait.Until(ExpectedConditions.ElementIsVisible(By.Id("page-title-counter")));
         }
 
-        public void ClickCount() => counterButton.Click();
+        public void ClickCount() => CounterButton.Click();
 
         #endregion Page Actions
     }
