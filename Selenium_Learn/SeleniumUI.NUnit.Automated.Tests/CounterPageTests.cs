@@ -9,7 +9,6 @@ namespace SeleniumUI.NUnit.Automated.Tests
     {
         private ITestDriver testRunner;
         private CounterPage page;
-        private const string pageUrl = "https://localhost:5001/counter";
 
         [SetUp]
         public void Setup()
@@ -23,16 +22,12 @@ namespace SeleniumUI.NUnit.Automated.Tests
         [Test]
         public void Counter_Navigate_HasTitle()
         {
-            //var pageTitle = testRunner.Driver.FindElement(By.Id("page-title-counter"));
-            
             Assert.AreEqual("Counter", page.PageTitle.Text);
         }
 
         [Test]
         public void Counter_Navigate_HasCounterButton()
         {
-            //var counterButton = testRunner.Driver.FindElement(By.Id("btn-count"));
-            
             Assert.NotNull(page.CounterButton);
             Assert.AreEqual("Click me", page.CounterButton.Text);
         }
