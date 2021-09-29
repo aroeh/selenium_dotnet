@@ -30,7 +30,7 @@ This project is a workshop result for Selenium training and learning.  The premi
 # Getting Started
 1.	Ensure that you have all required tools installed - Visual Studio or VS Code
 2.	Install optional tools if desired
-3.	Install .net 5.0 framework is it is not already installed on the workstation
+3.	Install .net 5.0 framework if it is not already installed on the workstation
 
 All other files and libraries will be included in the repository, so there is no need to download them or set them up
 
