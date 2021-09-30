@@ -1,18 +1,18 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using System;
-using TestDrivers;
+using TestBrowsers;
 
 namespace SeleniumUI.Automated.Tests
 {
     public class CounterPage : IDisposable
     {
-        private readonly ITestDriver testRunner;
+        private readonly IBrowserDriver testRunner;
         private const string pageUrl = "https://localhost:5001/counter";
 
         public CounterPage()
         {
-            testRunner = new EdgeTestDriver();
+            testRunner = new EdgeTestBrowser();
             //testRunner = new ChromeTestDriver();
         }
 

@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestDrivers\TestDrivers.csproj" />
+    <ProjectReference Include="..\TestBrowsers\TestBrowsers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

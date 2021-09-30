@@ -57,8 +57,31 @@ There are a few options to run the tests:
 1. Using the Visual Studio Text Explorer
 2. Command line `dotnet test`
 
+# Run Settings
+This solution contains a .runsettings file.  The purpose of the .runsettings is parameterize inputs for testing to accomodate different environments or scenarios.  For example, automating the tests between a QA and PROD environment will likely need to parameterize the app url.  the .runsettings is one way to accomplish that.
+
+### Solution Config and Solution Wide Files
+Within Visual Studio, the only file named ".runsettings" can be auto detected and only when it is in the root director of the solution.  In this case it is auto detected within the Selenium_Learn directory
+Visual Studio must be configuted to auto Detect the file
+`Test > Configure Run Settings > Auto Detect runsettings Files`
+
+You can also manually select a different run settings file within the same menu
+`Test > Configure Run Settings > Select Solution Wide runsettings File`
+
+For more information on runsettings visit [Run Settings](https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019#create-a-run-settings-file-and-customize-it)
+
+### Runsettings through the DotNet CLI
+Runsettings can also be set through the cli via the -s or --settings parameter of the dotnet test command.  This could be useful if needing to run the tests using a headless browser, like would be needed in a build pipeline.
+`dotnet test --settings=<filename>`
+`dotnet test --settings=.runsettings`
+
+Visit [dotnet test cli](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test) for more information
+
 # Code References
 - https://www.automatetheplanet.com/webdriver-net50/
 - https://code-maze.com/automatic-ui-testing-selenium-asp-net-core-mvc/
 - https://stackoverflow.com/questions/43780706/run-tests-on-multiple-browsers-in-parallel
 - https://stackoverflow.com/questions/5028926/run-selenium-tests-in-multiple-browsers-one-after-another-from-c-sharp-nunit
+- https://github.com/nunit/nunit3-vs-adapter/tree/8a9b8a38b7f808a4a78598542ddaf557950c6790/demo
+- https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test#examples
+- https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019#create-a-run-settings-file-and-customize-it

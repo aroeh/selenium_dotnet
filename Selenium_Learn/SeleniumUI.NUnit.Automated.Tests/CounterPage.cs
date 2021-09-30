@@ -1,23 +1,27 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
-using TestDrivers;
+using TestBrowsers;
 
 namespace SeleniumUI.NUnit.Automated.Tests
 {
-    public class CounterPage
+    public class CounterPage : ITestPage
     {
-        private readonly ITestDriver driver;
-        private const string pageUrl = "https://localhost:5001/counter";
+        public IBrowserDriver Browser { get; private set; }
 
-        public CounterPage(ITestDriver testDriver)
+        public string AppUrl { get; private set; }
+
+        public string PageRoute => "counter";
+
+        public CounterPage(IBrowserDriver testBrowser, string url)
         {
-            driver = testDriver;
+            Browser = testBrowser;
+            AppUrl = url;
         }
 
         #region Page Elements
 
-        public IWebElement PageTitle => driver.Driver.FindElement(By.Id("page-title-counter"));
-        public IWebElement CounterButton => driver.Driver.FindElement(By.Id("btn-count"));
+        public IWebElement PageTitle => Browser.Driver.FindElement(By.Id("page-title-counter"));
+        public IWebElement CounterButton => Browser.Driver.FindElement(By.Id("btn-count"));
 
         #endregion Page Elements
 
@@ -25,8 +29,8 @@ namespace SeleniumUI.NUnit.Automated.Tests
 
         public void Navigate()
         {
-            driver.Driver.Navigate().GoToUrl(pageUrl);
-            driver.DriverWait.Until(ExpectedConditions.ElementIsVisible(By.Id("page-title-counter")));
+            Browser.Driver.Navigate().GoToUrl($"{AppUrl}{PageRoute}");
+            Browser.DriverWait.Until(ExpectedConditions.ElementIsVisible(By.Id("page-title-counter")));
         }
 
         public void ClickCount() => CounterButton.Click();

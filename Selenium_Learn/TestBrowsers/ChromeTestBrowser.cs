@@ -5,9 +5,9 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace TestDrivers
+namespace TestBrowsers
 {
-    public class ChromeTestDriver : ITestDriver
+    public class ChromeTestBrowser : IBrowserDriver
     {
         private readonly IWebDriver webDriver;
         public IWebDriver Driver => webDriver;
@@ -17,7 +17,7 @@ namespace TestDrivers
         public WebDriverWait DriverWait => wait;
 
 
-        public ChromeTestDriver()
+        public ChromeTestBrowser()
         {
             var options = new ChromeOptions();
             options.AddArgument("headless");

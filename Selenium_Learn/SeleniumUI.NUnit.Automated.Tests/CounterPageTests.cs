@@ -1,20 +1,20 @@
 ﻿using NUnit.Framework;
-using TestDrivers;
+using TestBrowsers;
 
 namespace SeleniumUI.NUnit.Automated.Tests
 {
-    [TestFixture(typeof(EdgeTestDriver))]
-    [TestFixture(typeof(ChromeTestDriver))]
-    public class CounterPageTests<TWebDriver> where TWebDriver : ITestDriver, new()
+    [TestFixture(typeof(EdgeTestBrowser))]
+    [TestFixture(typeof(ChromeTestBrowser))]
+    public class CounterPageTests<TWebDriver> where TWebDriver : IBrowserDriver, new()
     {
-        private ITestDriver testRunner;
+        private IBrowserDriver browser;
         private CounterPage page;
 
         [SetUp]
         public void Setup()
         {
-            testRunner = new TWebDriver();
-            page = new CounterPage(testRunner);
+            browser = new TWebDriver();
+            page = new CounterPage(browser, TestContext.Parameters["appUrl"]);
 
             page.Navigate();
         }
@@ -35,8 +35,8 @@ namespace SeleniumUI.NUnit.Automated.Tests
         [TearDown]
         public void EndTests()
         {
-            testRunner.Driver.Quit();
-            testRunner.Driver.Dispose();
+            browser.Driver.Quit();
+            browser.Driver.Dispose();
         }
     }
 }
