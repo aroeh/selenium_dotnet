@@ -16,6 +16,9 @@ This project is a workshop result for Selenium training and learning.  The premi
     - Visual Studio Code version 1.60
 - Optional
     - Powershell: I found it helpful to run the project using the command line and then execute the tests through the IDE
+- Browsers
+    - Microsoft Edge Version 94.0.992.38 (64 Bit)
+    - Google Chrome Version Version 94.0.4606.71 (64 Bit)
 
 # Key Libraries and Downloads
 - .Net 5.0
